@@ -1,0 +1,10 @@
+.ui.toggle.checkbox label {
+  text-transform: uppercase;
+  font-size: 11px;
+  text-align: left;
+}
+
+.ui.container.selectInputContainer>div.ui.checkbox {
+  width: 20%;
+  padding-left: 5px;
+}

@@ -1,0 +1,72 @@
+.App {
+  text-align: center;
+}
+
+.App-logos {
+  height: 5vmin;
+  vertical-align: middle;
+  margin-right: 2px;
+  float: right;
+}
+
+.App-logo {
+  height: 15vmin;
+  vertical-align: middle;
+  margin-right: 20px;
+}
+
+.App-header-bar {
+  vertical-align: middle;
+}
+
+.logoBar {
+  vertical-align: middle;
+}
+
+.App-react-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 15vmin;
+  vertical-align: bottom;
+}
+
+.App-redux-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 10vmin;
+  vertical-align: top;
+  margin-top: 15px;
+}
+
+.App-nodejs-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 10vmin;
+  vertical-align: top;
+  margin-top: 20px;
+  margin-left: 35px;
+}
+
+.App-content {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding-top: 20px;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.App-margin-Large {
+  margin-top: 15px;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

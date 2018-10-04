@@ -1,0 +1,13 @@
+{
+  "name": "@vodafone/core-app",
+  "version": "0.0.1",
+  "description": "Vodafone common React Native Components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: run tests at this level via your native app\" && exit 1"
+  },
+  "dependencies": {
+    "react-native-collapsible": "^0.13.0",
+    "react-native-datepicker": "^1.7.2"
+  }
+}

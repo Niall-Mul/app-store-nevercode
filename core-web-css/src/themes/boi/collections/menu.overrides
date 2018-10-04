@@ -1,0 +1,42 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+.ui.menu.mainMenu {
+  border: none;
+  height: 50px;
+  border-radius: 0;
+  margin-top: 10px;
+}
+
+.ui.menu.mainMenu a.item {
+  color: #294755;
+  font-weight: 'bold';
+  border-right: 1px solid lightgray;
+  padding: 16px 20px;
+}
+
+.ui.menu.mainMenu a.item:hover,
+.ui.menu.mainMenu a.item.active {
+  background: white;
+}
+
+.ui.menu.mainMenu a.item:last-child {
+  border-right: none;
+}
+
+.ui.sidebar.menu {
+  background: #FAFBFC;
+  padding-top: 60px;
+  width: 280px!important;
+}
+
+.ui.sidebar.menu>.item.menuItem.menuTitle {
+  color: @boiBlue;
+  background: transparent;
+}
+
+.ui.sidebar.menu>.item.menuItem {
+  text-align: left;
+  padding: 20px 40px;
+  background: #FFF;
+  margin-bottom: 2px;
+}

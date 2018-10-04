@@ -1,0 +1,123 @@
+.ui.primary.button:hover {
+  box-shadow:
+    0px 0px 0px 1px rgba(0, 0, 0, 0.3) inset,
+    0px 2px 3px 0px rgba(0, 0, 0, 0.35) !important
+  ;
+}
+
+.ui.secondary.button:hover {
+  box-shadow:
+    0px 0px 0px 1px rgba(0, 0, 0, 0.2) inset,
+    0px 2px 3px 0px rgba(0, 0, 0, 0.3) !important
+  ;
+}
+
+.ui.button.clearAddressButton {
+  right: 0;
+  position: absolute;
+  background-color: @white;
+  color: @black;
+  top: 2px;
+}
+
+.ui.button.resetDirectionsButton {
+  position: absolute;
+  top: -25px;
+  right: 0;
+  margin: 0;
+  background-color: @black;
+  padding: 0;
+}
+
+.ui.button.storesListButton {
+  height: 36px;
+  min-width: 250px;
+  transition:1s;
+  -webkit-transition:1s;
+  -moz-transition:1s;
+}
+
+.ui.button.close-list-button {
+  background: @white;
+  color: @black;
+  font-size: 24px;
+  padding: 0;
+  float: right;
+  margin-right: -15px;
+}
+
+.ui.button.storesListButton:focus {
+  background-color: @turquoise;
+}
+
+.ui.button.storesListButton.storesListButtonRight {
+  left: 320px;
+}
+
+.ui.icon.button.arrow-icon {
+  background: none;
+  color: @black;
+  padding: 0px;
+  vertical-align: top;
+}
+
+.ui.buttons.transportModeButtons {
+  position: absolute;
+  top: 50px;
+  left: 10px;
+  width: 294px;
+}
+
+.ui.buttons.transportModeButtons .ui.button {
+  background-color: @white;
+  color: @grey;
+  border: 1px solid @turquoise;
+}
+
+.ui.buttons.transportModeButtons .ui.active.button {
+  background-color: @turquoise;
+  border: 1px solid @turquoise;
+  color: @white;
+}
+
+.ui.button.icon-button {
+  color: @grey;
+  background-color: @white;
+  display: inline-block;
+  border: 1px solid @lightGrey;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.ui.button.icon-button {
+  color: @grey;
+  background-color: @white;
+  display: inline-block;
+  border: 1px solid @lightGrey;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.ui.button.icon-button img {
+  width: 20px;
+}
+
+.ui.button.mylocation-button {
+  position: absolute;
+  bottom: 17px;
+  right: 10px;
+}
+@media only screen and (max-width : (@tabletBreakpoint - 1px)) {
+  .ui.button.storesListButton {
+    bottom: 80px;
+    left: 3%;
+    width: 94%;
+    position: fixed;
+  }
+}
+
+@media only screen and (max-width : (399px)) {
+  .ui.button.storesListButton {
+    bottom: 100px;
+  }
+}

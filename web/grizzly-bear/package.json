@@ -1,0 +1,48 @@
+{
+  "name": "grizzly-bear-insurance-wallet",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "build-semantic": "cd ../../core-web-css && gulp copy-theme && gulp build",
+    "watch-semantic": "cd ../../core-web-css && yarn run build-semantic && gulp watch"
+  },
+  "dependencies": {
+    "history": "^4.7.2",
+    "idx": "^2.4.0",
+    "immutable": "^3.8.2",
+    "key-mirror": "^1.0.1",
+    "rc-slider": "^8.6.3",
+    "rc-tooltip": "^3.7.3",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-html5-camera-photo": "^1.2.8-beta.0",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.0.0-next.3e165448",
+    "redux": "^4.0.0",
+    "redux-api-middleware": "^2.3.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
+    "semantic-ui-react": "^0.82.0",
+    "underscore": "^1.9.1"
+  },
+  "devDependencies": {
+    "expect": "^23.5.0"
+  },
+  "browserslist": {
+    "development": [
+      "last 2 chrome versions",
+      "last 2 firefox versions",
+      "last 2 edge versions"
+    ],
+    "production": [
+      ">0.25%",
+      "not op_mini all",
+      "ie 11"
+    ]
+  }
+}

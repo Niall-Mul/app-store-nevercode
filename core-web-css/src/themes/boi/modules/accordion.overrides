@@ -1,0 +1,15 @@
+.ui.styled.accordion, .ui.styled.accordion .accordion {
+   padding: 10px;
+   margin-bottom: 20px;
+}
+
+.ui.styled.accordion .title,
+.ui.styled.accordion .accordion .title {
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.ui.styled.accordion,
+.ui.styled.accordion .accordion {
+  box-shadow: 0 3px 13px 1px #eee;
+}

@@ -1,0 +1,29 @@
+@font-face {
+    font-family: "VodafoneBold";
+    src: url("./themes/vodafone/assets/fonts/vodafonergbd-webfont.eot");
+    src: url("./themes/vodafone/assets/fonts/vodafonergbd-webfont.eot?#iefix") format("embedded-opentype"), url(semantic/vodafonergbd-webfont.woff") format("woff"), url("./themes/vodafone/assets/fonts/vodafonergbd-webfont.ttf") format("truetype"), url("./themes/vodafone/assets/fonts/vodafonergbd-webfont.svg#VodafoneBold") format("svg");
+    font-weight: 700;
+    font-style: normal
+}
+@font-face {
+    font-family: "VodafoneRegular";
+    src: url("./themes/vodafone/assets/fonts/VodafoneRgd41d.eot");
+    src: url("./themes/vodafone/assets/fonts/VodafoneRgd41d.eot?#iefix") format("embedded-opentype"), url("./themes/vodafone/assets/fonts/VodafoneRg.woff") format("woff"), url("./themes/vodafone/assets/fonts/VodafoneRg.ttf") format("truetype"), url("./themes/vodafone/assets/fonts/VodafoneRg.svg#VodafoneRegular") format("svg");
+    font-weight: 400;
+    font-style: normal
+}
+@font-face {
+    font-family: "VodafoneLight";
+    src: url("./themes/vodafone/assets/fonts/vodafonelt-webfont.eot");
+    src: url("./themes/vodafone/assets/fonts/vodafonelt-webfont.eot?#iefix") format("embedded-opentype"), url("./themes/vodafone/assets/fonts/vodafonelt-webfont.woff2") format("woff2"), url("./themes/vodafone/assets/fonts/vodafonelt-webfont.woff") format("woff"), url("./themes/vodafone/assets/fonts/vodafonelt-webfont.ttf") format("truetype"), url("./themes/vodafone/assets/fonts/vodafonelt-webfont.svg#vodafone_ltregular") format("svg");
+    font-weight: 100;
+    font-style: normal
+}
+
+@font-face {
+  font-family: Vodafonelt;
+  font-weight: 100;
+  src: url('./assets/fonts/vodafonelt-webfont.ttf') format('truetype');
+  }
+
+/* @import url(https://fonts.googleapis.com/css?family=Roboto); */

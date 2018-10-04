@@ -1,0 +1,268 @@
+/*******************************
+           Overrides
+*******************************/
+
+.ui.card.storeLocator.storeCardContainer, .ui.card.storeLocator.storeDetailsCardContainer {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  flex: 1;
+  padding: 0.2em 0em 0em 0em;
+  width: 25%;
+  max-width: 400px;
+  min-width: 350px;
+  overflow: auto;
+  margin: 0px;
+}
+
+.ui.card.storeLocator.storeCardContainer {
+  max-height: 95%;
+}
+
+.ui.card.storeLocator.storeCardContainerList {
+  position: relative;
+  width: 100%;
+  min-width: 280px;
+  left: 0;
+  margin-bottom: 10px;
+}
+
+.ui.card.storeLocator.storeDetailsCardContainer {
+  max-height: 95%;
+}
+
+.ui.card.storeLocator.storeCardContainer .contentContainer, .ui.card.storeLocator.storeDetailsCardContainer .contentContainer {
+ height: 90%;
+ overflow-y: auto;
+}
+
+.card-top-row {
+  padding: 0.8em;
+}
+
+.open-span {
+  border: 1px @turquoise dashed;
+  padding: 0.1em 0.8em;
+  color: @turquoise;
+}
+
+.directions-button-container {
+  display: inline-block;
+  float: right;
+}
+
+.directions-button {
+  padding: 0.35em 0.8em 0.35em 0.8em !important;
+}
+
+.title-row {
+  padding: 0em 0.65em 0em 0.65em;
+  font-size: 1.2em;
+  margin-bottom: .5em;
+}
+
+.title-row-mileage {
+  float: right;
+  margin-right:2.5em;
+}
+
+.title-row-mileage span:first {
+  margin-right: 5px;
+}
+
+.title-arrow-container {
+  float: right;
+}
+
+.arrow-icon {
+  margin: 0!important;
+
+  font-size: 1.5em!important;
+  position: absolute;
+  top: 1.4em;
+  right: 0em;
+}
+
+.info-row {
+  padding: 0em 0.8em .2em 0.6em;
+  color: @grey;
+}
+.info-icon {
+  margin-right: 0.5em;
+  font-size: 1em !important
+}
+
+.phone-icon {
+  transform: rotate(135deg);
+  padding-bottom: 1em;
+}
+
+
+
+.closing {
+  float: right;
+}
+
+.rating-reviews-container {
+  padding: 1em 0.8em 1em 0.8em;
+}
+
+.rating {
+  display: inline-block;
+}
+
+.rating span:first-of-type {
+  margin-right: 0.5em;
+}
+
+.reviews {
+  display: inline-block;
+  float: right;
+  color: @turquoise;
+}
+
+.card-image {
+  width: 100%;
+  height: 256px;
+  object-fit: cover;
+}
+
+-------------------------
+-------------------------
+store details card
+-------------------------
+-------------------------
+
+.storeDetailsCardContainer i.large.icon {
+  font-size: 1em;
+  width: 1em;
+}
+.storeDetailsCardContainer i.icon {
+  font-size: 1em;
+  width: 1em;
+}
+
+.storeDetailsCardContainer h5
+{
+ margin-bottom: .3em !important;
+}
+
+.storeDetailsCardContainer h5.ui.header span
+ {
+  position: absolute;
+  top: .35em;
+ }
+
+.storeDeatilsArrowIcon
+{
+  font-size: 1.5em!important;
+  background-color: @white !important;
+  color: @black !important;
+  padding: .15em !important;
+}
+.storeDetailsInfoRow
+{
+  padding: 0em 1em 0em 1em;
+  color: @grey;
+}
+.storeDetailsName
+{
+  font-size: 1.2em,
+}
+
+.storeDetailsButtonRow
+{
+  text-align:center;
+  margin-top:.5em;
+  margin-bottom:.5em;
+
+}
+
+.storeDetailsButtonRow button
+{
+  width: 7em;
+  margin-right: 1em!important;
+  margin-left: 1em!important;
+}
+
+.storeDetailsMap
+{
+  margin-top:.5em;
+  margin-bottom:.5em;
+}
+
+.storeDetailsPhoneIcon {
+  transform: rotate(135deg);
+  padding-bottom: 1em;
+}
+
+.storeDetailsAccordion
+{
+  padding: 1em !important;
+}
+
+.storeDetailsAccordion div span:nth-child(1)
+{
+  width: 6em;
+  margin: 0em 3em .5em 0em;
+  display: inline-block;
+  font-style: oblique;
+}
+
+.storeDetailsAccordion span
+{
+  padding: .5em !important;
+  display: inline-block;
+}
+
+.accordion.ui .title
+{
+  background-color: @grey;
+  color: @white !important;
+  font-weight: bold;
+}
+.accordion.ui .title:hover
+{
+  color: @darkGrey !important;
+}
+
+.accordion.ui .title:active
+{
+  color: @darkGrey !important;
+}
+
+.accordion.ui .title:nth-child(1)
+{
+  border-bottom: solid 1px @darkGrey;
+}
+
+@media only screen and (max-width : (@tabletBreakpoint - 1px)) {
+.ui.card.storeLocator.storeCardContainer,
+.ui.card.storeLocator.storeDetailsCardContainer{
+  top:6em;
+  left:5%;
+  width:90%;
+  min-width:150px;
+}
+.ui.card.storeLocator.storeDetailsCardContainer{
+  height: 80%;
+  overflow-y: scroll;
+}
+.ui.card.storeLocator.storeCardContainerList {
+  top: 0;
+  min-width: 200px;
+  left: 0;
+  width: 100%;
+}
+.ui.card.storeLocator.storeCardContainerList .title-row {
+  font-size: 1em;
+  font-weight: bold;
+}
+.card-image {
+  height:20em;
+}
+.card-image-list {
+  height: 10em;
+}
+
+}

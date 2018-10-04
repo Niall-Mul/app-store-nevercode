@@ -1,0 +1,23 @@
+kind: Pod
+metadata:
+  name: react-slave
+spec:
+  containers:
+  - name: react-slave
+    image: 858094700919.dkr.ecr.us-west-2.amazonaws.com/react-base:latest
+    imagePullPolicy: Always
+    #command:
+    #- /busybox/cat
+    #tty: true
+    volumeMounts:
+      - name: aws-secret
+        mountPath: /root/.aws/
+      - name: docker-config
+        mountPath: /root/.docker/
+  volumes:
+    - name: aws-secret
+      secret:
+        secretName: aws-secret
+    - name: docker-config
+      configMap:
+        name: docker-config

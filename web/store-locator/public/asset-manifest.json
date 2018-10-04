@@ -1,0 +1,11 @@
+{
+  "runtime~main.js": "/static/js/runtime~main.8d89f63a.js",
+  "runtime~main.js.map": "/static/js/runtime~main.8d89f63a.js.map",
+  "vendors.js": "/static/js/vendors.9e58cb35.chunk.js",
+  "vendors.js.map": "/static/js/vendors.9e58cb35.chunk.js.map",
+  "main.css": "/static/css/main.8704a0f7.chunk.css",
+  "main.js": "/static/js/main.c2c82d7e.chunk.js",
+  "main.js.map": "/static/js/main.c2c82d7e.chunk.js.map",
+  "static/media/icons.woff2": "/static/media/icons.0ab54153.woff2",
+  "index.html": "/index.html"
+}

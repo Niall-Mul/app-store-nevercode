@@ -1,0 +1,177 @@
+body.boi {
+  background-color: @pageBackground;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, sans-serif;
+}
+
+.page {
+
+}
+
+@media only screen and (min-width : @tabletBreakpoint) {
+  .page {
+    max-width: 500px;
+    margin: auto;
+  }
+}
+
+.paymentContainer .confirmationText {
+  text-align: center;
+  font-size: 20px;
+  padding: 15px 30px;
+  margin: 0 !important;
+  width: 100%;
+}
+
+.paymentContainer .listLink {
+  color: @boiBlue;
+  text-decoration: underline;
+}
+
+.paymentContainer .listLink {
+  color: @boiBlue !important;
+  font-weight: bold;
+}
+
+.paymentContainer .linksListItem .listLink {
+  color: @boiBlue !important;
+  font-weight: 300;
+}
+
+div.quotePrice {
+  font-size: 24px;
+  font-weight: bold;
+  color: @boiBlue;
+}
+
+i.icon.quoteHeartIcon {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 24px;
+  color: @boiBlue;
+}
+
+img.ui.image.quoteHeaderImage {
+  max-width: 50%;
+  margin: 0;
+  max-height: 3em;
+}
+
+span.quotePriceTotal {
+  font-size: 2em;
+}
+
+span.euroSymbol {
+  font-size: 1.2em;
+}
+
+.blueText {
+  color: @boiBlue;
+}
+
+.paymentTitle {
+  font-weight: bold;
+}
+
+.SP-PageContent {
+  padding-top: 20px;
+}
+
+.ui.accordion .title .icon,
+.ui.accordion .accordion .title .icon {
+  float: right;
+  background-color: #dfe6f2;
+  border-radius: 5px;
+  width: 1.3em;
+  height: 1.3em;
+  font-size: 1.3em;
+}
+
+.icon-complete {
+  background-color: transparent !important;
+}
+
+.ui.icon.input > input {
+  border: none !important;
+}
+
+.ui.icon.input > i.icon {
+  font-size: 2em;
+}
+
+.ui.search > .ui.icon.input > i.icon {
+  font-size: 18px;
+  color: grey;
+  opacity: 1;
+}
+
+.rc-slider > .rc-slider-handle {
+  margin-top: -8px;
+  width: 20px;
+  height: 20px;
+  border: none;
+  box-shadow: 0px 3px 10px 2px #dddddd;
+}
+
+.rc-slider > .rc-slider-track {
+  background-color: @boiBlue;
+}
+
+.rc-slider-tooltip > .rc-slider-tooltip-content > .rc-slider-tooltip-arrow {
+  border: none;
+}
+
+.rc-slider-tooltip > .rc-slider-tooltip-content > .rc-slider-tooltip-inner {
+  color: grey;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+@media only screen and (max-width: (@tabletBreakpoint - 1px)) {
+  .paymentContainer .confirmationText {
+    padding: 15px;
+    font-size: 18px;
+  }
+
+  img.ui.image.quoteHeaderImage {
+    max-width: 65%;
+  }
+
+  .paymentTitle {
+    font-size: 20px;
+  }
+}
+
+
+/******************
+   form.overrides
+ ******************/
+
+/* FIXME: This `.ui.container` is necessary to gain on the specificity */
+.ui.container.boiform .ui.form {
+  .field {
+    background-color: @white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 3px 13px 1px #eee!important;
+    padding: 0.4rem 0.8rem;
+    width: 100%;
+    height: auto;
+    background-image: none;
+    margin: 0 0 10px 0;
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+  }
+
+  .field > label {
+    text-transform: uppercase;
+    text-align: left;
+    color: @lightTextColor;
+  }
+
+  .field .ui.input input {
+    border-color: transparent;
+    padding: 0.4rem 0;
+    font-size: 1rem;
+  }
+}

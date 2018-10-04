@@ -1,0 +1,96 @@
+/*******************************
+         Theme Overrides
+*******************************/
+
+.ui.container div.googleMapsAutoComplete {
+  position: absolute;
+  top: 10px;
+  left: 140px;
+  background-color: @white;
+  display: inline-block;
+  border: 1px solid @turquoise;
+  border-radius: 4px;
+  transition:1s;
+  -webkit-transition:1s;
+  -moz-transition:1s;
+}
+
+.ui.container div.googleMapsAutoComplete.googleMapsAutoCompleteRightPosition {
+  left: 350px;
+}
+
+.ui.container .googleMapsAutoComplete .ui.button.filter-button {
+  display: inline;
+  border-radius: 0px;
+}
+
+.ui.container.directionsDetails {
+  position: absolute;
+  bottom: 0;
+  width: 100%!important;
+  margin-left: 0!important;
+  margin-right: 0!important;
+  background-color: white;
+  height: 60px;
+  padding: 10px;
+}
+
+.ui.container.directionDetailsLeft {
+  padding-left: 350px;
+}
+
+.ui.container .googleMapsAutoComplete .ui.search {
+  display: inline;
+}
+
+.ui.container .googleMapsAutoComplete .search.icon.search-icon {
+  color: @darkGrey;
+  margin-left: 10px;
+}
+
+.ui.container .googleMapsAutoComplete .ui.button.clear-button {
+  background: none;
+  color: @darkGrey;
+}
+
+.ui.container .googleMapsAutoComplete .ui.search input {
+  border-color: transparent;
+  border-width: 0px;
+}
+
+@media only screen and (max-width : (@tabletBreakpoint - 1px)) {
+  .ui.container.directionDetailsLeft {
+    display: none;
+  }
+
+  .ui.container.directionsDetails header {
+    font-size: @h4;
+    color: @grey;
+    weight: bold;
+  }
+
+  .ui.container.directionsDetails div {
+    font-size: @fontSize;
+    color: @grey;
+   }
+
+  .ui.container div.googleMapsAutoComplete {
+    left: 3%;
+    width: 94%;
+   }
+
+   .ui.container div.googleMapsAutoComplete.googleMapsAutoCompleteRightPosition {
+     width: 50%;
+     left: 300px;
+   }
+
+  .ui.container div.googleMapsAutoComplete .ui.search .ui.input{
+    width:55%;
+  }
+ }
+
+@media only screen and (max-width : (399px)) {
+  .ui.container div.googleMapsAutoComplete.googleMapsAutoCompleteRightPosition {
+    left: 0;
+  }
+}

@@ -1,0 +1,33 @@
+/*******************************
+           Overrides
+*******************************/
+
+.grid > .column.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 4em;
+}
+
+.ui.grid>.column.quoteGridColumnLeft {
+  width: auto;
+  font-size: 1em;
+  color: #747474;
+  text-align: left;
+}
+
+.ui.grid>.column.quoteGridColumnRight {
+  width: auto;
+}
+div.column.dashboardColumn {
+  height: 140px;
+  padding: 10px!important;
+}
+
+@media only screen and (max-width: (@tabletBreakpoint - 1px)) {
+
+  div.column.dashboardColumn {
+    height: 90px;
+    padding: 5px!important;
+  }
+
+}

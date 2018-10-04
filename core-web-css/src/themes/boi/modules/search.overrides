@@ -1,0 +1,16 @@
+.selectInputContainer .ui.search .results {
+  max-height: 300px;
+  overflow-y: scroll;
+  min-width: 300px;
+}
+
+.selectInputContainer .ui.search .results>.result {
+  height: 60px;
+  padding: 0;
+  line-height: 30px;
+}
+
+.selectInputContainer .ui.search .results>.result .title {
+  border: none;
+  font-weight: 300;
+}

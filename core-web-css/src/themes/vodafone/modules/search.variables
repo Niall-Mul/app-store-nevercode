@@ -1,0 +1,49 @@
+/*******************************
+            Search
+*******************************/
+
+/* Search Prompt */
+@promptBackground: @inputBackground;
+@promptVerticalPadding: @inputVerticalPadding;
+@promptHorizontalPadding: @inputHorizontalPadding;
+@promptLineHeight: @inputLineHeight;
+@promptFontSize: @relativeMedium;
+@promptPadding: (@promptVerticalPadding + ((1em - @promptLineHeight) / 2)) @promptHorizontalPadding;
+@promptBorder: 1px solid @borderColor;
+@promptBorderRadius: @circularRadius;
+@promptColor: @textColor;
+@promptTransition:
+  background-color @defaultDuration @defaultEasing,
+  color @defaultDuration @defaultEasing,
+  box-shadow @defaultDuration @defaultEasing,
+  border-color @defaultDuration @defaultEasing
+;
+@promptBoxShadow: 0em 0em 0em 0em transparent inset;
+
+/* Mobile */
+@mobileMaxWidth: ~"calc(100vw - 2rem)";
+
+/* Result Box */
+@resultsWidth: 18em;
+@resultsBackground: #FFFFFF;
+@resultsDistance: 0.5em;
+@resultsBorderRadius: @defaultBorderRadius;
+@resultsBorder: 1px solid @solidBorderColor;
+@resultsBoxShadow: @floatingShadow;
+
+/* Result */
+@resultFontSize: 1em;
+@resultVerticalPadding: @relativeLarge;
+@resultHorizontalPadding: @relativeLarge;
+@resultPadding: @resultVerticalPadding @resultHorizontalPadding;
+@resultTextColor: @textColor;
+@resultLineHeight: 1.33;
+@resultDivider: 1px solid @internalBorderColor;
+@resultLastDivider: none;
+
+/* Result Content */
+@resultTitleFont: @pageFont;
+@resultTitleMargin: 0em 0em 0em;
+@resultTitleFontWeight: @normal;
+@resultTitleFontSize: @relativeMedium;
+@resultTitleColor: @textColor;

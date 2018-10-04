@@ -1,0 +1,38 @@
+{
+  "name": "vfgroup-react-ui-monorepo",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "app-hello-world",
+      "app-store-locator",
+      "core-app",
+      "core-redux",
+      "core-web",
+      "core-web-css",
+      "web/*"
+    ],
+    "nohoist": [
+      "**/semantic-ui/**",
+      "**/semantic-ui",
+      "**/jest/**",
+      "**/jest"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.0",
+    "flow-bin": "^0.76.0",
+    "jest-expo": "^29.0.0",
+    "lerna": "^2.11.0"
+  },
+  "scripts": {
+    "clean": "lerna clean -f --yes && rm -rf node_modules",
+    "reset": "yarn run clean && yarn",
+    "flow": "flow",
+    "lint": "eslint ."
+  },
+  "postinstall": "ncp core-web-css/tasks-override/build.js core-web-css/tasks/build.js && ncp core-web-css/tasks-override/watch.js core-web-css/tasks/watch.js"
+}

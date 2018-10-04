@@ -1,0 +1,58 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+
+.selectInputContainer .selectBoxDropdown {
+  height: 25px;
+}
+
+.selectInputContainer .cardNumberInput {
+  width: 100%;
+  height: 24px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 7px;
+  font-size: 16px;
+  padding-left: 5px;
+  color: @boiTextColor;
+  border: none;
+  background-color: transparent;
+  text-transform: uppercase;
+  padding: 0 0 0 5px;
+  margin: 0;
+}
+
+.selectInputContainer .selectBoxDropdown>.ui.selection.dropdown {
+  display: block;
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  color: @boiTextColor;
+  font-size: 16px;
+  width: 100%;
+  padding: 5px 0;
+}
+
+.selectInputContainer .selectBoxDropdown>.ui.selection.dropdown>i {
+  padding: 5px;
+}
+
+.selectInputContainer .selectBoxDropdown>.ui.selection.dropdown>.text {
+  color: @boiTextColor;
+}
+
+.selectInputContainer .selectBoxDropdown>.ui.selection.dropdown>.menu>.item {
+    text-transform: uppercase;
+}
+
+.selectInputContainer .selectBoxDropdown>.ui.selection.dropdown>.menu {
+  top: auto;
+}
+
+@media only screen and (max-width : (@tabletBreakpoint - 1px)) {
+  .selectInputContainer .selectBoxDropdown>.ui.selection.dropdown {
+    font-size: 14px;
+  }
+
+  .selectInputContainer .selectBoxDropdown>.ui.selection.dropdown>i {
+    padding: 5px 15px;
+  }
+}

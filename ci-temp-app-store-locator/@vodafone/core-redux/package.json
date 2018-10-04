@@ -1,0 +1,9 @@
+{
+  "name": "@vodafone/core-redux",
+  "version": "0.0.1",
+  "description": "Vodafone common Redux Actions/Reducers and Libraries",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: run tests at this level via your native or web app\" && exit 1"
+  }
+}

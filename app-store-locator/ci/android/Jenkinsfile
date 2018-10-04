@@ -1,0 +1,95 @@
+@Library('jenkins-shared-library') _
+
+pipeline {
+  agent {
+    kubernetes {
+      cloud 'kubernetes'
+      label 'android-slave-pod'
+      defaultContainer 'android-slave'
+    }
+  }
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '30', artifactNumToKeepStr: '3'))
+    disableConcurrentBuilds()
+    timeout(time: 1, unit: 'HOURS')
+    timestamps()
+ 	}
+
+  stages {
+    stage('Preparation') {
+      steps {
+        echo 'Prep'
+      }
+    }
+    stage('Build') {
+      steps {
+        sh '''
+        cp app-store-locator/ci/build-app-store-locator-prereq.sh . && chmod +x build-app-store-locator-prereq.sh && ./build-app-store-locator-prereq.sh
+        cd ci-temp-app-store-locator
+        cp ci/build-android.sh . && chmod +x build-android.sh && ./build-android.sh
+        cp android/app/build/outputs/apk/release/app-release.apk android/app/build/outputs/apk/release/android-test-interim.apk
+        '''
+       archiveArtifacts 'ci-temp-app-store-locator/android/app/build/outputs/apk/release/android-test-interim.apk'
+      }
+    }
+    stage('Test') {
+      steps {
+        echo 'Will run test'
+        //sh 'cd app-store-locator && yarn test'
+      }
+    }
+    /*
+    stage('SonarQube analysis') {
+      when {
+        branch 'develop'
+      }    
+      steps {
+        withSonarQubeEnv('Sonar') {
+          script {
+            def scannerHome = tool name: 'sonarScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+            sh "${scannerHome}/bin/sonar-scanner"
+          }
+        }
+      }
+    }
+    */
+    stage('Publish-Nexus') {
+      when {
+        branch 'develop'
+      }    
+      steps {
+        archive 'ci-temp-app-store-locator/android/app/build/outputs/apk/release/app-release.apk'
+        //zip zipFile: 'workspace-mobiledebug.zip', archive: true, dir: 'ci-temp-app-store-locator'
+        //nexusArtifactUploader artifacts: [[artifactId: 'store-locator-android', classifier: '', file: 'ci-temp-app-store-locator/android/app/build/outputs/apk/release/app-release.apk', type: 'apk']], credentialsId: 'nexusPublisher', groupId: 'vf.singlepoint.android', nexusUrl: 'nexus-vfre.skytap-tss.vodafone.com', nexusVersion: 'nexus3', protocol: 'https', repository: 'VFRE-Release-React', version: "1.0-${env.BUILD_ID}"
+      }
+    }
+
+    stage('DeviceTest') {
+      when {
+        branch 'develop'
+      }    
+      steps {
+        sh 'curl -o test.apk https://s3-us-west-2.amazonaws.com/singlepointsolutions-devopsdemo-publiccontent/app-debug-androidTest.apk'
+        //devicefarm testSpecName: '', environmentToRun: 'StandardEnvironment', appArtifact: 'ci-temp-app-store-locator/android/app/build/outputs/apk/release/app-release.apk', appiumJavaJUnitTest: '', appiumJavaTestNGTest: '', appiumPythonTest: '', appiumVersionJunit: '1.4.16', appiumVersionPython: '1.4.16', appiumVersionTestng: '1.4.16', calabashFeatures: '', calabashProfile: '', calabashTags: '', deviceLatitude: 51.517855, deviceLocation: true, deviceLongitude: -0.179014, devicePoolName: 'Android', eventCount: '', eventThrottle: '', extraData: false, extraDataArtifact: '', ifAppPerformanceMonitoring: true, ifBluetooth: true, ifGPS: true, ifNfc: true, ifVideoRecording: true, ifVpce: false, ifWebApp: false, ifWifi: true, ignoreRunError: false, isRunUnmetered: false, jobTimeoutMinutes: 60, junitArtifact: 'test.apk', junitFilter: '', password: '', projectName: 'store-locator', radioDetails: false, runName: '${BUILD_TAG}', seed: '', storeResults: true, testToRun: 'INSTRUMENTATION', uiautomationArtifact: '', uiautomatorArtifact: '', uiautomatorFilter: '', username: '', vpceServiceName: '', xctestArtifact: '', xctestFilter: '', xctestUiArtifact: '', xctestUiFilter: ''
+        //build job: 'CI-Android-DeviceTest'
+        //build job: 'CI-Sleep'
+        echo 'ok, JOB WAS executed'
+        //sh 'sleep 300'
+      }
+    }
+    stage('Deploy-Early Access Store') {
+      steps {
+        echo 'will upload'
+        slackSend channel: 'storelocator-demo-qa', message: "Just before upload", tokenCredentialId: 'SlackDemo'
+        androidApkUpload apkFilesPattern: 'ci-temp-app-store-locator/android/app/build/outputs/apk/release/app-release.apk', googleCredentialsId: 'Google Play', trackName: 'internal', recentChangeList: [[language: 'en-US', text: "Build: ${env.BUILD_NUMBER}"], [language: 'en-GB', text: "Build: ${env.BUILD_NUMBER}"]]
+        slackSend channel: 'storelocator-demo-qa', message: "Hey, a new version of the Android Store Locator application is available on the Early Access store, at: https://play.google.com/apps/internaltest/4698548686026718230 . Build: ${env.BUILD_NUMBER}", tokenCredentialId: 'SlackDemo'
+      }
+    }    
+    
+  }
+  post {
+      always {
+        slackNotifier(currentBuild.currentResult)
+      }
+  }
+}

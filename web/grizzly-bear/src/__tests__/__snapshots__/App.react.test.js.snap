@@ -1,0 +1,149 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Component renders without crashing 1`] = `
+<div>
+  <h1
+    className="ui top attached header App-header-bar"
+  >
+    <div>
+      <img
+        alt="Vodafone"
+        className="App-logo"
+        src="/themes/vodafone/assets/Vodafone.png"
+      />
+      Hello World
+      <div
+        style={
+          Object {
+            "float": "right",
+          }
+        }
+      >
+        <img
+          alt="React"
+          className="App-react-logo"
+          src="logo.svg"
+        />
+        <img
+          alt="Redux"
+          className="App-redux-logo"
+          src="redux.svg"
+        />
+        <img
+          alt="Redux"
+          className="App-nodejs-logo"
+          src="/themes/vodafone/assets/nodejs.png"
+        />
+      </div>
+    </div>
+  </h1>
+  <div
+    className="ui left aligned container App-content"
+  >
+    <div
+      className="ui cards"
+    >
+      <div
+        className="ui card"
+        href={undefined}
+        onClick={[Function]}
+      >
+        <div
+          className="content"
+        >
+          <div
+            className="header"
+          >
+            Counter
+          </div>
+          <div
+            className="meta"
+          >
+            Redux Counter
+          </div>
+          <div
+            className="description"
+          >
+            <div
+              style={
+                Object {
+                  "paddingTop": "20px",
+                }
+              }
+            >
+              <h2
+                className="ui header"
+              >
+                <i
+                  aria-hidden="true"
+                  className="stopwatch icon"
+                />
+                 
+                0
+              </h2>
+              <button
+                className="ui primary button"
+                disabled={undefined}
+                onClick={[Function]}
+                role="button"
+                tabIndex={undefined}
+              >
+                Increase
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="ui card"
+        href={undefined}
+        onClick={[Function]}
+      >
+        <div
+          className="content"
+        >
+          <div
+            className="header"
+          >
+            API
+          </div>
+          <div
+            className="meta"
+          >
+            Spring Boot API
+          </div>
+          <div
+            className="description"
+          >
+            <div>
+              <button
+                className="ui primary button"
+                disabled={undefined}
+                onClick={[Function]}
+                role="button"
+                tabIndex={undefined}
+              >
+                Invoke SpringBoot API
+              </button>
+              <div
+                className="App-margin-Large"
+              />
+              <div
+                className="App-margin-Large"
+              >
+                <div
+                  className="ui centered inline loader"
+                />
+              </div>
+              <div />
+              <div
+                className="ui feed"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

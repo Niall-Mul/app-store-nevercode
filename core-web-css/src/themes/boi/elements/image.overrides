@@ -1,0 +1,77 @@
+.SP-InsurancePage .ui.image.quoteImage {
+  display: block;
+  height: auto;
+  min-width: 80px;
+  width: 20%;
+  margin: 2em auto 1em auto;
+}
+
+.SP-PageContent .quoteContainer .ui.image.cardLogo {
+  padding: 0 5px;
+  max-width: 60%;
+}
+
+.SP-PageContent .quoteContainer .ui.image.paymentIcon,
+.SP-PageContent .paymentContainer .ui.image.paymentIcon {
+  display: block;
+  height: auto;
+  min-width: 80px;
+  width: 20%;
+  margin: auto;
+}
+
+.listLink > .externalLinkIcon {
+  width: 1em;
+  margin-left: 0.5em;
+  vertical-align: middle;
+  display: inline!important;
+}
+
+.menuCard .menuCardImage {
+  min-width: 60px;
+  height: 60px;
+}
+
+.ui.image.headerLogo {
+  height: 50px;
+  margin-right: 20px;
+  display: inline-block;
+}
+
+.ui.image.boiLoginImage {
+  padding: 20px;
+  margin: 50px auto 0;
+  max-width: 75%;
+}
+
+@media only screen and (max-width: (@tabletBreakpoint - 1px)) {
+  .ui.image.headerLogo {
+    height: 30px;
+    display: block;
+    margin: auto;
+  }
+
+  .SP-PageContent .paymentContainer .ui.image.paymentIcon,
+  .SP-PageContent .quoteContainer .ui.image.paymentIcon {
+    min-width: 60px;
+  }
+
+  .ui.image.boiLoginImage {
+    margin: 30px auto 0;
+  }
+
+  .menuCard .menuCardImage {
+    min-width: 40px;
+    height: 35px;
+  }
+}
+
+
+.imagecircle {
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  background-size: cover !important;
+  background-position: center center !important;
+  border-radius: 50%;
+}

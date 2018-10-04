@@ -1,0 +1,4 @@
+.segment.quoteDetailsBox {
+  box-shadow: none;
+  border: none;
+}

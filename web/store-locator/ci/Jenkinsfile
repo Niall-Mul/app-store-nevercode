@@ -1,0 +1,93 @@
+@Library('jenkins-shared-library') _
+
+pipeline {
+  //test
+  //agent{ node 'react-slave'}
+  agent {
+    kubernetes {
+      cloud 'kubernetes'
+      label 'react-slave-pod'
+      //yamlFile 'web/store-locator/ci/react-slave.yaml'
+      defaultContainer 'react-slave'
+    }
+  }
+
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '30', artifactNumToKeepStr: '10'))
+    //disableConcurrentBuilds()
+    timeout(time: 1, unit: 'HOURS')
+    timestamps()
+ 	}
+
+  stages {
+    stage('Preparation') {
+      steps {
+        echo 'preparation'
+      }
+    }
+    stage('Build') {
+      steps {
+        sh '''export PUBLIC_URL=https://storelocator.ci.devopsdemo.cloud.singlepoint.ie
+        cp core-web-css/tasks-override/* core-web-css/tasks
+        cp core-web-css/src/themes/vodafone/theme.config core-web-css/src/theme.config
+        yarn install
+        cd web/store-locator
+        yarn build-semantic
+        yarn build
+        cd build/static/js && cp main.*.chunk.js main.js && cp runtime~main.*.js runtime~main.js && cp vendors.*.chunk.js vendors.js
+        cd ../css && cp main.*.chunk.css main.chunk.css
+        '''
+      }
+    }
+    stage('Test') {
+      steps {
+        sh '''export PATH=$PATH:/usr/local/bin
+        export CI=true
+        cd web/store-locator
+        yarn add --dev jest-junit --save
+        yarn test-ci web/store-locator core-web core-redux
+        '''
+        junit keepLongStdio: true, testResults: 'web/store-locator/junit.xml'
+      }
+    }
+    /*
+    stage('SonarQube analysis') {
+      when {
+        branch 'develop'
+      }
+      steps {
+        withSonarQubeEnv('Sonar') {
+          script {
+            def scannerHome = tool name: 'sonarScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+            sh "${scannerHome}/bin/sonar-scanner"
+          }
+        }
+      }
+    }
+    */
+    
+    stage('Publish-Nexus') {
+      when {
+        branch 'develop'
+      }
+      steps {
+        sh 'rm -f store-locator.zip'
+        zip zipFile: 'store-locator.zip', archive: true, dir: 'web/store-locator/build'
+        //nexusArtifactUploader artifacts: [[artifactId: 'store-locator', classifier: '', file: 'store-locator.zip', type: 'zip']], credentialsId: 'nexusPublisher', groupId: 'vf.singlepoint.web', nexusUrl: 'nexus-vfre.skytap-tss.vodafone.com', nexusVersion: 'nexus3', protocol: 'https', repository: 'VFRE-Release-React', version: "1.0-${env.BUILD_ID}"
+      }
+    }
+    stage('Deploy-CI') {
+      steps {
+        withAWS(region:'us-west-2', credentials: 'AWSCredentialsTest') {
+         s3Upload acl: 'Private', bucket: 'singlepointsolutions-devopsdemo-ci', cacheControl: 'max-age=60', file: 'web/store-locator/build'
+        }
+      }
+    }    
+  }
+  post {
+      always {
+          /* Use slackNotifier.groovy from shared library and provide current build result as parameter */
+          slackNotifier(currentBuild.currentResult)
+      }
+  }
+}

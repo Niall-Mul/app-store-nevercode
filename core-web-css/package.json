@@ -1,0 +1,16 @@
+{
+  "name": "@vodafone/core-web-css",
+  "version": "0.0.1",
+  "description": "Vodafone common Semantic UI CSS Components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-semantic": "cd semantic && gulp copy-theme && gulp build",
+    "watch-semantic": "cd semantic && yarn run build-semantic && gulp watch"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "semantic-ui": "2.3.3"
+  }
+}

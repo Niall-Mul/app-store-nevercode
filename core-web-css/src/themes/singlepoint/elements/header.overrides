@@ -1,0 +1,41 @@
+/*******************************
+           Overrides
+*******************************/
+
+h1.ui.header,
+.ui.huge.header {
+  font-weight: bold;
+}
+
+h2.ui.header,
+.ui.large.header {
+  font-weight: normal;
+}
+
+.ui.attached.header {
+  border-bottom: 50px solid @turquoise;
+  color:yellow;
+  font-family: @headerFont ;
+}
+
+.ui.header>.image:not(.icon), .ui.header>img {
+  width: 6em;
+  vertical-align: middle;
+  margin-top: -.165em;
+  margin-right: 20px;
+}
+
+h1.ui.header {
+  margin-top: .33em;
+}
+
+.ui.header.main {
+  padding-top: 1em;
+  vertical align: middle;
+  color: @white;
+}
+
+.ui.header.main .text {
+  color: @black;
+  font-size: 1.35rem;
+}

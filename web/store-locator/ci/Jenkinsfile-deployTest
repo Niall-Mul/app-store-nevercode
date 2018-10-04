@@ -1,0 +1,53 @@
+@Library('jenkins-shared-library') _
+
+pipeline {
+  agent{ node 'react-slave'}
+  parameters {
+    string(name: 'ARTIFACT_BUILD', defaultValue: '96', description: 'Build number')
+  }
+
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '30', artifactNumToKeepStr: '10'))
+    disableConcurrentBuilds()
+    timeout(time: 1, unit: 'HOURS')
+    timestamps()
+ 	}
+
+  stages {
+    stage('Preparation') {
+      tools {
+        maven 'M3'
+      }
+      steps {
+        cleanWs()
+        configFileProvider(
+          [configFile(fileId: 'MavenSettingsXMLSimpleJobs', variable: 'MAVEN_SETTINGS')]) {
+          sh '''
+          GROUP_ID=vf.singlepoint.web
+          ARTIFACT_ID=store-locator
+          ARTIFACT_TYPE=zip
+          echo $ARTIFACT_BUILD
+          mvn org.apache.maven.plugins:maven-dependency-plugin:3.0.1:copy -s $MAVEN_SETTINGS -Dmaven.repo.remote=https://nexus-vfre.skytap-tss.vodafone.com -Dartifact=$GROUP_ID:$ARTIFACT_ID:1.0-$ARTIFACT_BUILD:$ARTIFACT_TYPE -DoutputDirectory=./
+          mkdir -p web/store-locator/build
+          cp *.zip web/store-locator/build
+          cd web/store-locator/build
+          unzip *.zip
+          '''
+          }
+      }
+    }
+    stage('Deploy-Test') {
+      steps {
+        withAWS(region:'eu-west-1', credentials: 'AWSCredentialsTest') {
+         s3Upload acl: 'Private', bucket: 'singlepointsolutions-vodadone-dev-webshosting-test', cacheControl: 'max-age=60', file: 'web/store-locator/build'
+        }
+      }
+    }
+  }
+  post {
+      always {
+          /* Use slackNotifier.groovy from shared library and provide current build result as parameter */
+          slackNotifier(currentBuild.currentResult)
+      }
+  }
+}

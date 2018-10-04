@@ -1,0 +1,103 @@
+/*******************************
+            Button
+*******************************/
+
+/*-------------------
+       Element
+--------------------*/
+
+@googleFontName : 'Open Sans';
+@pageFont       : 'Open Sans', Arial, sans-serif;
+
+@medium: 13px;
+
+@verticalPadding   : 0.8em;
+@horizontalPadding : 0.8em;
+@borderRadius      : @relative4px;
+@color             : @white;
+@textColor         : @white;
+@fontWeight        : normal;
+@textTransform     : none;
+
+@backgroundColor      : @turquoise;
+@backgroundImage      : linear-gradient(transparent, rgba(0, 0, 0, 0.02));
+
+@solidBorderColor: transparent;
+
+@borderBoxShadowColor: @solidBorderColor;
+@borderBoxShadow: 0px 0px 0px 1px @solidBorderColor inset;
+@shadowBoxShadow: 0px 0px 0px 0px transparent;
+
+@transition:
+  opacity 0.3s @defaultEasing,
+  background-color 0.3s @defaultEasing,
+  color 0.3s @defaultEasing,
+  box-shadow 0.3s @defaultEasing,
+  background 0.3s @defaultEasing
+;
+/*-------------------
+        State
+--------------------*/
+
+@hoverBackgroundColor: @darkTurquoise;
+@hoverColor: @white;
+@hoverBoxShadow:
+  @borderBoxShadow,
+  0px 2px 3px 0px rgba(0, 0, 0, 0.2) !important
+;
+
+@downBackgroundColor: @turquoise;
+@downBackgroundImage: linear-gradient(rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04));
+@downTextColor: @white;
+@downBoxShadow: @borderBoxShadow;
+@downColor: @white;
+@focusColor: @white;
+@activeColor: @white;
+
+@activeBackgroundColor: #F0F0F0;
+@activeBoxShadow: 0px 0px 0px 1px #DDDDDD;
+@activeHoverColor: @white;
+@activeColor:@white;
+
+/*-------------------
+      Variations
+--------------------*/
+
+/* Basic */
+@basicBorderSize: 0px;
+@basicBorderRadius: 4px;
+@basicColoredBorderSize: 1px;
+@basicHoverBackground: @white;
+@basicHoverBoxShadow: @hoverBoxShadow;
+@basicDownBackground: @white;
+@basicDownBoxShadow: @downBoxShadow;
+
+@basicActiveBackground: #990100;
+@basicActiveBoxShadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.2);
+
+/* Labeled */
+@labeledIconBackgroundColor: transparent;
+@labeledIconWidth: 2em;
+
+@labeledLabelBorderOffset: 0px;
+
+/* Colored */
+@coloredBackgroundImage : @subtleGradient;
+@coloredBoxShadow       : 0px 0px 0px 1px rgba(0, 0, 0, 0.1) inset;
+
+/* Primary */
+@primaryColor       : @turquoise;
+@primaryBoxShadow   : 0px 0px 0px 1px #0157E4 inset;
+
+/* Secondary */
+@secondaryColor           : #EEEEEE;
+@secondaryBackgroundImage : @backgroundImage;
+@secondaryTextColor       : @textColor;
+@secondaryBoxShadow       : @borderBoxShadow;
+
+/* Emotive */
+@positiveColor: @turquoise;
+@negativeColor: @blue;
+
+/* Inverted */
+@invertedBorderSize: 1px;

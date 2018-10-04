@@ -1,0 +1,4 @@
+@styledTitleColor: @boiBlue;
+@styledTitleHoverColor: @boiBlue;
+@styledActiveTitleColor: @boiBlue;
+@styledBorderRadius: @5px;

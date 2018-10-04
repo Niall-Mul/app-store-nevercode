@@ -1,0 +1,9 @@
+.ui.form .field.field2Columns {
+  width: 48%;
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.ui.form .field.field2Columns.leftColumn {
+  margin-right: 4%;
+}

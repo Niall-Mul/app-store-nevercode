@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "sdkVersion": "27.0.0",
+    "ignoreNodeModulesValidation": true,
+    "packagerOpts": {
+      "config": "rn-cli.config.js",
+      "projectRoots": ""
+    },
+    "name": "Singlepoint Store Locator",
+    "slug": "singlepoint-store-locator",
+    "privacy": "public",
+    "icon": "./assets/singlepoint-1024x1024.png",
+    "splash": {
+      "backgroundColor": "#ffffff",
+      "resizeMode": "contain",
+      "image": "./assets/singlepoint-splash.png"
+    },
+    "android": {
+      "package": "singlepoint.com.storelocator",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyBrgGpz9DhIp-RSs6A1fJhksxO0__TtuE8"
+        }
+      },
+      "permissions": [
+        "ACCESS_FINE_LOCATION"
+      ]
+    },
+    "ios": {
+      "config": {
+        "googleMapsApiKey": "AIzaSyADLhSpSiT5auGseO5eivZEWtx5h6XzGBo"
+      }
+    },
+    "notification": {
+      "icon": "./assets/singlepoint-48x48.png"
+    }
+  },
+  "name": "StoreLocator",
+  "displayName": "Vodafone Store Locator"
+}

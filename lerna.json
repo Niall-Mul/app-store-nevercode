@@ -1,0 +1,15 @@
+{
+  "lerna": "2.11.0",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "packages": [
+    "app-hello-world",
+    "app-store-locator",
+    "core-app",
+    "core-redux",
+    "core-web",
+    "core-web-css",
+    "web/*"
+  ],
+  "version": "0.0.0"
+}

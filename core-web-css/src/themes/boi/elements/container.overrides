@@ -1,0 +1,141 @@
+.SP-InsurancePage .ui.container.quoteContainer,
+.SP-PageDialog.quoteContainer,
+.SP-PageContent.quoteContainer,
+.SP-PageContent > .quoteContainer,
+.SP-LoginPage .ui.container.quoteContainer {
+  width: 500px;
+  min-height: 500px;
+  color: #747474;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.SP-LoginPage .ui.container.quoteContainer {
+  background-color: #fafbfc;
+}
+
+.SP-LoginPage .ui.container.selectInputContainer,
+.SP-PageDialog .ui.container.selectInputContainer,
+.SP-PageContent.quoteContainer .ui.container.selectInputContainer {
+  border-radius: 3px;
+  background-color: #fff;
+  margin: 10px 0;
+  padding: 3px 15px;
+  box-shadow: 0px 3px 13px 1px #eee;
+}
+
+.SP-LoginPage .ui.container.selectInputContainer .selectBoxDropdown,
+.SP-PageDialog .ui.container.selectInputContainer .selectBoxDropdown,
+.SP-PageContent .ui.container.selectInputContainer .selectBoxDropdown {
+  width: 100%;
+  height: 24px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 7px;
+  font-size: 16px;
+  padding-left: 5px;
+  color: @boiTextColor;
+  border: none;
+  background-color: transparent;
+  text-transform: uppercase;
+  padding: 0 0 0 5px;
+  margin: 0;
+}
+
+.SP-LoginPage .ui.container.selectInputContainer.inputFocused,
+.SP-PageDialog .ui.container.selectInputContainer.inputFocused,
+.SP-PageContent .ui.container.selectInputContainer.inputFocused {
+  border-left: 3px solid @boiBlue;
+  padding: 3px 12px;
+}
+
+.ui.container.paymentContainer {
+  padding-top: 30px;
+  color: @boiTextColor;
+  width: 500px;
+  position: relative;
+  height: calc(~'100% - 140px');
+  margin: auto;
+  font-size: 16px;
+}
+
+.mainMenu > .ui.container {
+  padding: 10px;
+  font-size: 16px;
+}
+
+div.appContainer,
+div#root,
+div.pusher {
+  height: 100%;
+}
+
+div.appContainer {
+  background-color: @pageBackground;
+}
+
+.pushable > .pusher {
+  overflow-y: auto !important;
+}
+
+.pushable > .pusher.dimmed {
+  overflow-y: hidden !important;
+}
+
+div.buttonsBottom {
+  position: relative;
+  width: 500px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+div.buttonsBottom.centerContent {
+  width: 100% !important;
+  margin: 50px auto 0!important;
+}
+
+div.loginPage {
+  background-color: #fafbfc;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  padding: 0;
+}
+
+@media only screen and (max-width: (@tabletBreakpoint - 1px)) {
+  .SP-LoginPage .ui.container.selectInputContainer,
+  .SP-PageDialog .ui.container.selectInputContainer,
+  .SP-PageContent .ui.container.selectInputContainer {
+    margin: 0 !important;
+    padding: 3px 15px;
+  }
+  .SP-InsurancePage .ui.container.quoteContainer,
+  .SP-PageDialog.quoteContainer,
+  .SP-PageContent.quoteContainer,
+  .SP-PageContent > .quoteContainer,
+  .SP-LoginPage .ui.container.quoteContainer {
+    min-height: auto;
+  }
+  .SP-LoginPage .ui.container.selectInputContainer .selectBoxDropdown,
+  .SP-PageDialog .ui.container.selectInputContainer .selectBoxDropdown,
+  .SP-PageContent .ui.container.selectInputContainer .selectBoxDropdown {
+    font-size: 12px;
+    height: 20px;
+  }
+  .ui.container.paymentContainer {
+    height: calc(~'100% - 80px');
+  }
+  .ui.container.paymentContainer .buttonsBottom {
+    margin-top: 20%;
+  }
+  div.buttonsBottom {
+    width: 100%;
+    left: 0;
+  }
+  div.buttonsBottom.centerContent {
+    margin: 120px auto 20px!important;
+  }
+
+}

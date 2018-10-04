@@ -1,0 +1,5 @@
+{
+  "name": "Semantic UI themes to build",
+  "description": "Specifies themes to build using ",
+  "themes": ["boi"]
+}

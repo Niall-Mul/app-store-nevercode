@@ -1,0 +1,13 @@
+/*******************************
+             Card
+*******************************/
+
+/*-------------------
+         View
+--------------------*/
+
+@width: 12em;
+@background: transparent;
+
+@imageBackground: transparent;
+@imageWidth: 10em;

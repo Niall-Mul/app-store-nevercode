@@ -1,0 +1,194 @@
+/*******************************
+           Overrides
+*******************************/
+
+a.ui.card.dashboard-card > .content {
+  border: none;
+}
+
+.SP-PageContent .ui.cards .card.dashboard-card {
+  margin-right: 0.75em;
+}
+
+.SP-PageContent .ui.cards > .card.dashboard-card > .content > .header {
+  font-size: 16px;
+  position: absolute;
+  bottom: 12px;
+  color: grey;
+  text-decoration: none;
+}
+
+.SP-PageContent .ui.card.menuCard {
+  border-radius: 10px;
+  padding: 15px 40px;
+  align-items: center;
+  width: 80%;
+  height: 100%;
+  background: #fff;
+}
+
+.SP-PageContent a.ui.card.menuCard.disabled {
+  pointer-events: none;
+}
+
+.SP-PageContent .ui.card.menuCard:hover {
+  transform: none;
+}
+
+.SP-PageContent .ui.card.menuCard > .content {
+  position: absolute;
+  bottom: 12px;
+  border-top: none;
+  text-align: center;
+  padding: 5px;
+}
+
+.SP-PageContent .ui.card.menuCard > .content > .header {
+  font-size: 13px;
+  color: grey;
+  text-decoration: none;
+  font-weight: 300;
+}
+
+.SP-PageContent .ui.card.menuCard .extra.content {
+    bottom: 0;
+    top: auto;
+    left: auto;
+    font-size: smaller;
+    padding-bottom: 0;
+    border-top: none !important;
+}
+
+.SP-PageContent .ui.card.menuCard > .content .quoteContainer .quoteCard {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 3px 13px 1px #eee;
+  text-align: center;
+  padding: 20px;
+  margin: 20px 10px;
+}
+
+.quoteCard > h1 {
+  margin: 0;
+}
+
+.quoteCard .selectInputContainer.inputBordered {
+  margin: 0;
+}
+
+.SP-PageContent .ui.cards .card {
+  background-color: @white;
+}
+
+.SP-PageContent .quotes .ui.card > .image,
+.quotes .ui.cards > .card .ui.image {
+  height: auto;
+  width: 14em;
+  margin-left: 2em;
+  margin-right: 0;
+  margin-top: 2em;
+}
+
+.SP-PageContent .quotes .ui.cards > .card > .content {
+  border-top: none;
+  text-align: left;
+  margin-left: 1em;
+}
+
+.selectInputContainer.inputBordered {
+  border-radius: 5px;
+  background-color: #fff;
+  margin: 5px 0;
+  padding: 5px 20px;
+  box-shadow: 0px 3px 13px 1px #eee;
+}
+
+.SP-PageContent .ui.card.quoteCard.currentInsurer  > .header:before
+{
+    content: "Current Insurer";
+    text-transform: uppercase;
+    position: absolute;
+    display: inline-flex;
+    top: -5px;
+    width: 100%;
+    height: 20px;
+    background-color: #0486b0;
+    color: white;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    padding-left: 20px;
+    padding-top: 3px;
+    font-size: x-small;
+}
+
+.SP-PageContent .ui.card.quoteCard {
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 3px 13px 1px #eee;
+  border-radius: 16px;
+}
+
+.SP-PageContent .ui.card.quoteCard > .header {
+  padding: 20px 20px 0 20px;
+  display: grid;
+}
+
+.SP-PageContent .ui.card.quoteCard > .content {
+  border: none;
+  padding: 0;
+  margin-top: 15px;
+  padding: 0 20px;
+}
+
+.SP-PageContent .ui.card.quoteCard .content.cardPlan {
+  text-align: left;
+  color: @boiBlue;
+  font-weight: bold;
+  padding: 0 20px;
+}
+
+.SP-PageContent .ui.card.quoteCard .content.cardPlan.readMore {
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.SP-PageContent .ui.card.quoteCard .extra.content {
+  border: none !important;
+  padding: 0 20px;
+}
+
+.SP-PageContent .ui.card.quoteCard .content.footerExpanded {
+  padding: 0 20px 10px 20px;
+  margin-top: 0;
+}
+
+.SP-PageContent .ui.card.quoteCard .content.footer {
+  margin-top: 20px;
+  padding: 0 20px 10px 20px;
+}
+
+.paymentContainer .ui.grid > .row {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media only screen and (max-width: (@tabletBreakpoint - 1px)) {
+  .SP-PageContent .ui.container.selectInputContainer.inputBordered {
+    margin: 0 !important;
+    padding: 5px 10px;
+    width: 100% !important;
+  }
+
+  .SP-PageContent .ui.card.menuCard {
+    width: 100%;
+  }
+
+  .SP-PageContent .ui.card.menuCard > .content {
+    bottom: 5px;
+  }  
+
+  .SP-PageContent .ui.card.menuCard .extra.content {
+    font-size: xx-small;
+  }
+}

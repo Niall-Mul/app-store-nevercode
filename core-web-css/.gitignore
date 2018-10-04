@@ -1,0 +1,38 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# semantic
+/dist
+/semantic
+/src/theme.config
+/src/definitions
+
+# Themes (not required)
+/src/themes/amazon
+/src/themes/basic
+/src/themes/bookish
+/src/themes/bootstrap3
+/src/themes/chubby
+/src/themes/classic
+/src/themes/colored
+/src/themes/duo
+/src/themes/fixed-width
+/src/themes/flat
+/src/themes/github
+/src/themes/gmail
+/src/themes/instagram
+/src/themes/material
+/src/themes/pulsar
+/src/themes/raised
+/src/themes/resetcss
+/src/themes/round
+/src/themes/rtl
+/src/themes/striped
+/src/themes/timeline
+/src/themes/twitter

@@ -1,0 +1,90 @@
+@Library('jenkins-shared-library') _
+
+pipeline {
+  agent{ node 'macos'}
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '30', artifactNumToKeepStr: '10'))
+    disableConcurrentBuilds()
+    timeout(time: 1, unit: 'HOURS')
+    timestamps()
+ 	}
+
+  stages {
+    stage('Preparation') {
+      steps {
+        echo 'Preparation'
+        checkout scm
+      }
+    }
+    stage('Build') {
+      steps {
+        sh '''export PATH=$PATH:/usr/local/bin
+        cp app-store-locator/ci/build-app-store-locator-prereq.sh . && chmod +x build-app-store-locator-prereq.sh && ./build-app-store-locator-prereq.sh
+        ./app-store-locator/ci/build-ios.sh
+        '''
+      }
+    }
+    stage('Test') {
+      steps {
+        echo 'placeholder'
+        
+      }
+    }
+    /*
+    stage('SonarQube analysis') {
+      when {
+        branch 'develop'
+      }    
+      steps {
+        withSonarQubeEnv('Sonar') {
+          script {
+            def scannerHome = tool name: 'sonarScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+            sh "${scannerHome}/bin/sonar-scanner"
+          }
+        }
+      }
+    }*/
+   stage('Publish-Nexus') {
+      when {
+        branch 'develop'
+      }    
+      steps {
+        archiveArtifacts 'ci-temp-ios/builds/StoreLocator.ipa'
+        echo 'todo'
+        //archive 'ci-temp-app-store-locator/android/app/build/outputs/apk/release/app-release.apk'
+        //nexusArtifactUploader artifacts: [[artifactId: 'store-locator-ios', classifier: '', file: 'ci-temp-ios/builds/StoreLocator.ipa', type: 'ipa']], credentialsId: 'nexusPublisher', groupId: 'vf.singlepoint.ios', nexusUrl: 'nexus-vfre.skytap-tss.vodafone.com', nexusVersion: 'nexus3', protocol: 'https', repository: 'VFRE-Release-React', version: "1.0-${env.BUILD_ID}"
+      }
+    }
+    stage('DeviceTest') {
+      when {
+        branch 'develop'
+      }    
+      steps {
+        echo 'Tests'
+        //devicefarm appArtifact: 'ci-temp-ios/builds/StoreLocator.ipa', appiumJavaJUnitTest: '', appiumJavaTestNGTest: '', appiumPythonTest: '', appiumVersionJunit: '1.4.16', appiumVersionPython: '1.4.16', appiumVersionTestng: '1.4.16', calabashFeatures: '', calabashProfile: '', calabashTags: '', deviceLatitude: 47.6204, deviceLocation: false, deviceLongitude: -122.3941, devicePoolName: 'IOS', environmentToRun: 'StandardEnvironment', eventCount: '500', eventThrottle: '', extraData: false, extraDataArtifact: '', ifAppPerformanceMonitoring: true, ifBluetooth: true, ifGPS: true, ifNfc: true, ifVideoRecording: true, ifVpce: false, ifWebApp: false, ifWifi: true, ignoreRunError: false, isRunUnmetered: false, jobTimeoutMinutes: 60, junitArtifact: '', junitFilter: '', password: '', projectName: 'store-locator', radioDetails: false, runName: '${BUILD_TAG}', seed: '', storeResults: false, testSpecName: '', testToRun: 'BUILTIN_FUZZ', uiautomationArtifact: '', uiautomatorArtifact: '', uiautomatorFilter: '', username: '', vpceServiceName: '', xctestArtifact: '', xctestFilter: '', xctestUiArtifact: '', xctestUiFilter: ''
+        //build job: 'CDD-IOS-DeviceTest', parameters: [string(name: 'ARTIFACT_BUILD', value: "${env.BUILD_ID}")]
+      }
+    }
+    stage('Publish-Store') {
+      when {
+        branch 'develop'
+      }    
+      steps {
+        sh '''
+        export ALTOOL="/Applications/Xcode.app/Contents/Applications/Application Loader.app/Contents/Frameworks/ITunesSoftwareService.framework/Versions/A/Support/altool"
+        "$ALTOOL" --validate-app --type ios --file ci-temp-ios/builds/StoreLocator.ipa --username appledevaccount@singlepoint.ie --password ehba-mcov-zgps-szoc
+        "$ALTOOL" --upload-app --type ios --file ci-temp-ios/builds/StoreLocator.ipa --username appledevaccount@singlepoint.ie --password ehba-mcov-zgps-szoc
+        '''
+      }
+    }    
+
+    
+  }
+  post {
+      always {
+          slackNotifier(currentBuild.currentResult)
+          step([$class: 'ClaimPublisher'])
+          sh 'env'
+      }
+  }
+}

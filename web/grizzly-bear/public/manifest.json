@@ -1,0 +1,15 @@
+{
+  "short_name": "BOI",
+  "name": "Bank of Ireland",
+  "icons": [
+    {
+      "src": "boi.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/?utm_source=homescreen",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

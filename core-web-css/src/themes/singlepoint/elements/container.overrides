@@ -1,0 +1,132 @@
+/*******************************
+         Theme Overrides
+*******************************/
+
+.ui.container div.googleMapsAutoComplete {
+  background-color: @white;
+  display: inline-block;
+  border: 1px solid @turquoise;
+  border-radius: 4px;
+  transition:1s;
+  -webkit-transition:1s;
+  -moz-transition:1s;
+  margin-left: 20px;
+}
+
+.ui.container div.googleMapsAutoComplete.googleMapsAutoCompleteRightPosition {
+  margin-left: 330px;
+}
+
+.ui.container .googleMapsAutoComplete .ui.button.filter-button {
+  display: inline;
+  border-radius: 0px;
+}
+
+div.directionsBlock {
+  display: flex;
+}
+
+div.suggestionsContainer {
+  position: fixed;
+  bottom: 60px;
+  z-index: 9;
+  left: 60px;
+  width: auto;
+  opacity: 0.9;
+}
+
+div.suggestionItem {
+  background-color: @white;
+  padding: 5px;
+  border-bottom: 1px solid @turquoise;
+}
+
+.ui.container.directionsDetails {
+  position: absolute;
+  bottom: 0;
+  width: 100%!important;
+  margin-left: 0!important;
+  margin-right: 0!important;
+  background-color: @white;
+  height: 60px;
+  padding: 10px;
+}
+
+.ui.container.directionDetailsLeft {
+  padding-left: 350px;
+}
+
+.ui.container .googleMapsAutoComplete .ui.search {
+  display: inline;
+}
+
+.ui.container .googleMapsAutoComplete .search.icon.search-icon {
+  color: @darkGrey;
+  margin-left: 10px;
+}
+
+.ui.container .googleMapsAutoComplete .ui.button.clear-button {
+  background: none;
+  color: @darkGrey;
+}
+
+.ui.container .googleMapsAutoComplete .ui.search input {
+  border-color: transparent;
+  border-width: 0px;
+}
+
+div.suggestionDescription {
+  borderColor: @turquoise;
+  borderWidth: 1
+}
+
+@media only screen and (max-width : (@tabletBreakpoint - 1px)) {
+  .ui.container.directionDetailsLeft {
+    display: none;
+  }
+
+  .ui.container.directionsDetails header {
+    font-size: @h4;
+    color: @grey;
+    weight: bold;
+  }
+
+  .ui.container.directionsDetails div {
+    font-size: @fontSize;
+    color: @grey;
+   }
+
+  .ui.container div.googleMapsAutoComplete {
+    left: 3%;
+    width: 94%;
+    position: fixed;
+    margin-left: 0;
+   }
+
+   .ui.container div.googleMapsAutoComplete.googleMapsAutoCompleteRightPosition {
+     width: 50%;
+   }
+
+  .ui.container div.googleMapsAutoComplete .ui.search .ui.input{
+    width:55%;
+  }
+ }
+
+@media only screen and (max-width : (399px)) {
+  .ui.container div.googleMapsAutoComplete.googleMapsAutoCompleteRightPosition {
+    left: 0;
+  }
+
+  div.suggestionsContainer {
+    left: 0;
+    bottom: 80px;
+  }
+  .ui.container.directionsDetails {
+    height: 80px;
+  }
+
+  div.directionsBlock {
+    display: block;
+  }
+
+}

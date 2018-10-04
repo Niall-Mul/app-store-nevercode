@@ -1,0 +1,26 @@
+/*******************************
+           Overrides
+*******************************/
+
+div.ui.list.storeList {
+  width: 310px;
+  height: 100%;
+  background-color: white;
+  position: absolute;
+  z-index: 1;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 10px;
+}
+
+@media only screen and (max-width : (@tabletBreakpoint - 1px)) {
+  div.ui.list.storeList {
+    width: 250px;
+  }
+}
+
+@media only screen and (max-width : (399px)) {
+  div.ui.list.storeList {
+    width: 100%;
+  }
+}

@@ -1,0 +1,74 @@
+.listTitle {
+  color: @boiBlue;
+  font-size: 1.2rem;
+}
+
+.ui.list .item.coversItem {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  line-height: 1.5em;
+}
+
+.ui.list .item.coversItem>img {
+  height: 1em;
+  padding: 0 5px;
+}
+
+.ui.list.linksList {
+  text-align: left;
+  font-size: 16px;
+  margin-top: 40px;
+}
+
+.ui.list.linksList>.linksListItem {
+  padding: 0.5em 0;
+}
+
+/**
+ * Celled list
+ */
+.ui.list.celled > .item {
+  background-color: white;
+  border: none;
+  box-shadow: 1px 1px 2px rgba(55, 55, 55, 0.7);
+  padding: 6px 20px 6px 20px !important;
+}
+
+.ui.list.celled > .item:first-child {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.ui.list.celled > .item:last-child {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.ui.list.celled > .item .header {
+  color: @secondaryColor;
+  font-weight: 400;
+}
+
+.ui.list.celled > .item .description,
+.ui.list.celled > .item .content {
+  margin-top: 0.2em;
+  font-size: 0.8em;
+}
+
+.ui.list.celled > .item .highlight {
+  color: @lightPrimaryColor;
+}
+
+
+
+@media only screen and (max-width: (@tabletBreakpoint - 1px)) {
+  .ui.list.linksList {
+    margin-top: 20px;
+  }
+}

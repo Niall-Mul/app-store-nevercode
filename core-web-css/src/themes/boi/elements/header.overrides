@@ -1,0 +1,111 @@
+/*******************************
+           Overrides
+*******************************/
+
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+h1.ui.header,
+.ui.huge.header {
+  font-weight: normal;
+}
+
+h2.ui.header,
+.ui.large.header {
+  font-weight: normal;
+}
+
+.ui.attached.header {
+  border-bottom: 1px solid @grey;
+  vertical-align: middle;
+  box-shadow: 0 5px 15px 0 @darkGrey;
+}
+
+.ui.header > .image:not(.icon),
+.ui.header > img {
+  width: 8em;
+  vertical-align: top;
+  margin-top: 0.01em;
+  margin-right: 0.3em;
+  margin-bottom: 0.2em;
+}
+
+h1.ui.header {
+  margin-top: 0.33em;
+}
+
+.ui.header.main {
+  padding: 1em 0 0;
+  background-color: @blue;
+  vertical-align: middle;
+  color: @white;
+  height: 140px;
+}
+
+.ui.header.main.small {
+  height: 100px;
+}
+
+.ui.header.main .text {
+  color: @white;
+  font-size: 1.35rem;
+}
+
+.ui.segment.SP-LoginDialog {
+  box-shadow: 0 5px 15px 0 @darkGrey;
+}
+
+.SP-LoginPage {
+  margin-top: 0em;
+  background-color: @lightBlue;
+  padding-top: 5%;
+  color: @white;
+}
+
+.SP-LoginPage .ui[class*='center aligned'].container .ui.header {
+  color: @white;
+  font-weight: normal;
+}
+
+.SP-PageDialog {
+  padding-top: 3%;
+}
+
+.SP-PageContent .quoteContainer > h5.quoteTitle {
+  color: @boiTextColor;
+}
+
+.SP-PageContent.quoteContainer > h5.header.quoteTitle.detailsPage {
+  color: grey;
+  margin-top: 10px;
+}
+
+.SP-PageContent .quoteContainer .ui.header.quoteHeader {
+  color: @boiTextColor;
+}
+
+.SP-loginPortal {
+  z-index: 1040;
+  position: absolute;
+  width: 450px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media only screen and (max-width: (@tabletBreakpoint - 1px)) {
+  .ui.header.main,
+  .ui.header.main.small {
+    height: 80px;
+    padding: 15px;
+  }
+
+  .ui.header.main > .ui.container {
+    text-align: center;
+  }
+
+  .ui.header.main .text {
+    display: block;
+    font-size: 14px;
+    margin-top: -10px;
+  }
+}
